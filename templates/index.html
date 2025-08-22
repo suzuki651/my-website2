@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイムカード</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .punch-form { margin: 20px; }
+        input, button { font-size: 1.2em; padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>タイムカード</h1>
+    <form action="/punch" method="post" class="punch-form">
+        <label for="employee_name">従業員名:</label>
+        <input type="text" id="employee_name" name="employee_name" required>
+        <br>
+        <button type="submit" name="action" value="check_in">出勤</button>
+        <button type="submit" name="action" value="check_out">退勤</button>
+    </form>
+</body>
+</html>

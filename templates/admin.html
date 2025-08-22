@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打刻管理</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        h1 { text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>打刻データ一覧</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>従業員名</th>
+                <th>出勤時間</th>
+                <th>退勤時間</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for punch in punch_cards %}
+            <tr>
+                <td>{{ punch.id }}</td>
+                <td>{{ punch.employee_name }}</td>
+                <td>{{ punch.check_in_time }}</td>
+                <td>{{ punch.check_out_time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
